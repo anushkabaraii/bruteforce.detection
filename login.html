@@ -11,7 +11,7 @@
 
 <h2>Login Page</h2>
 
-<form action="/login" method="POST">
+<form onsubmit="return loginUser()"></form>
 
 <input type="text" name="username" placeholder="Username" required>
 
@@ -20,6 +20,26 @@
 <button type="submit">Login</button>
 
 </form>
+<script>
+function loginUser() {
+
+let username = document.getElementById("username").value;
+let password = document.getElementById("password").value;
+
+if(username === "admin" && password === "1234"){
+
+window.location.href = "dashboard.html";
+
+}
+else{
+
+alert("Invalid username or password");
+
+}
+
+return false;
+}
+</script>
 
 </div>
 
